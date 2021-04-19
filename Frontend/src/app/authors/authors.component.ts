@@ -30,7 +30,7 @@ export class AuthorsComponent implements OnInit {
   }
 
   getAuthor(author: any) {
-    //get individual book
+    //get individual author
   }
   editAuthor(author: any) {
     localStorage.setItem('editAuthorId', author._id.toString());

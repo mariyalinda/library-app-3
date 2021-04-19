@@ -20,27 +20,6 @@ function router() {
     next();
   }
 
-  // updateRouter.get("/book/:id", function (req, res) {
-  //   const id = req.params.id;
-  //   Bookdata.findOne({ _id: id }).then(function (book) {
-  //     res.render("bookupdateform", {
-  //       nav,
-  //       title: "Update",
-  //       book,
-  //     });
-  //   });
-  // });
-  // updateRouter.get("/author/:id", function (req, res) {
-  //   const id = req.params.id;
-  //   Authordata.findOne({ _id: id }).then(function (author) {
-  //     res.render("authorupdateform", {
-  //       nav,
-  //       title: "Update",
-  //       author,
-  //     });
-  //   });
-  // });
-
   updateRouter.put("/book", verifyToken, (req, res) => {
     console.log(req.body);
     (id = req.body._id),

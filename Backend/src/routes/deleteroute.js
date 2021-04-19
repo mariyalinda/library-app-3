@@ -38,12 +38,7 @@ function router() {
       });
     });
   });
-  // deleteRouter.get("/book/:id/confirm", function (req, res) {
-  //   const id = req.params.id;
-  //   Bookdata.deleteOne({ _id: id }).then(function () {
-  //     res.redirect("/books");
-  //   });
-  // });
+
   deleteRouter.get("/author/:id/confirm", function (req, res) {
     const id = req.params.id;
     Authordata.deleteOne({ _id: id }).then(function () {
