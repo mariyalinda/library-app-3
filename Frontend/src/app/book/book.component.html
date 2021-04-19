@@ -1,0 +1,53 @@
+<!--/stories-->
+
+<div class="row">
+  <br />
+  <div class="col-md-2 col-sm-3 text-center">
+    <a class="story-title" href="#"
+      ><img
+        alt=""
+        src="{{ book.bookimg }}"
+        style="width: 100px; height: 100px"
+        class="img-circle"
+    /></a>
+  </div>
+  <div class="col-md-10 col-sm-9">
+    <h3>{{ book.title }}</h3>
+    <div class="text-right">
+      <a
+        *ngIf="_auth.loggedIn()"
+        (click)="editBook(book)"
+        class="btn btn-success"
+        >Update</a
+      >
+      <!-- <a
+        *ngIf="_auth.loggedIn()"
+        (click)="deleteBook(book)"
+        class="btn btn-danger"
+        >Delete</a
+      > -->
+    </div>
+    <div class="row">
+      <div class="col-xs-9">
+        <h4>
+          <span class="label label-default">{{ book.author }}</span>
+        </h4>
+        <h4>
+          <small style="font-family: courier, 'new courier'" class="text-muted"
+            >{{ book.genre }}
+          </small>
+        </h4>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+
+    <h4 class="display-4">About</h4>
+    <p>{{ book.about }}</p>
+  </div>
+</div>
+
+<!--/stories-->
+
+<a routerLink="/home" class="btn btn-primary pull-right btnNext"
+  >More <i class="glyphicon glyphicon-chevron-right"></i
+></a>

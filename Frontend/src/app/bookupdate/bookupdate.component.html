@@ -1,0 +1,78 @@
+<!-- form starts here -->
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <!-- action="/update/book/<%=book._id%>/updated" -->
+    <form (ngSubmit)="bookupdate()" #bookupdate="ngForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Title</label>
+          <input
+            class="form-control"
+            id="title"
+            name="title"
+            value="{{ book.title }}"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4" style="font-weight: bold">Author</label>
+          <input
+            class="form-control"
+            id="author"
+            name="author"
+            value="{{ book.author }}"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Genre</label>
+          <input
+            class="form-control"
+            id="genre"
+            name="genre"
+            value="{{ book.genre }}"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Sneak peek of your book</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            class="form-control-file"
+            value="{{ book.bookimg }}"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label style="font-weight: bold">Description</label>
+          <input
+            class="form-control"
+            type="text"
+            id="about"
+            name="about"
+            [(ngModel)]="book.about"
+            #about="ngModel"
+            minlength="5"
+            [class.is-invalid]="about.invalid && about.touched"
+            value="book.about"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="about.valid || about.untouched"
+            >Description must have atleast 5 characters!</small
+          >
+        </div>
+      </div>
+
+      <br />
+      <button id="submit" type="submit" class="btn btn-secondary">
+        Submit
+      </button>
+    </form>
+    <!-- form ends here -->
+  </div>
+  <div class="col-lg-3"></div>
+</div>

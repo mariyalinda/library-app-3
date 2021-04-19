@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <br />
+    <!-- action="/login/confirm" -->
+    <form #loginuser="ngForm" (ngSubmit)="loginuser()">
+      <div class="form-group col-md-12">
+        <h3>Username</h3>
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="user.username"
+          minlength="3"
+          #username="ngModel"
+          [class.is-invalid]="username.invalid && username.touched"
+          class="form-control"
+          placeholder="Enter username"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="username.valid || username.untouched"
+          >Incorrect username!</small
+        >
+      </div>
+      <br />
+      <div class="form-group col-md-12">
+        <h3>Password</h3>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          #pw="ngModel"
+          [class.is-invalid]="pw.invalid && pw.touched"
+          [(ngModel)]="user.password"
+          placeholder="Enter password"
+        />
+        <small class="text-danger" [class.d-none]="pw.valid || pw.untouched"
+          >Incorrect password!</small
+        >
+      </div>
+      <button id="submit" type="submit" class="btn btn-secondary">Login</button>
+    </form>
+  </div>
+  <div class="col-lg-4"></div>
+</div>
