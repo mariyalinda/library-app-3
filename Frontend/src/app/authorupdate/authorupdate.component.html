@@ -1,1 +1,69 @@
-<p>authorupdate works!</p>
+<!-- form starts here -->
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <form #authorupdate="ngForm" (ngSubmit)="authorupdate()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Name</label>
+          <input
+            class="form-control"
+            id="name"
+            name="name"
+            value="{{ author.name }}"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Place</label>
+          <input
+            class="form-control"
+            id="place"
+            name="place"
+            value="{{ author.place }}"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Genre</label>
+          <input
+            class="form-control"
+            id="genre"
+            name="genre"
+            value="{{ author.genre }}"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label style="font-weight: bold">Author Image</label>
+          <input
+            type="file"
+            id="authorimage"
+            name="authorimage"
+            class="form-control-file"
+            value="{{ author.image }}"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label style="font-weight: bold">Description</label>
+          <input
+            class="form-control"
+            type="text"
+            id="authorabout"
+            name="authorabout"
+            value="{{ author.about }}"
+          />
+        </div>
+      </div>
+
+      <br />
+      <button id="submit" type="submit" class="btn btn-secondary">
+        Submit
+      </button>
+    </form>
+    <!-- form ends here -->
+  </div>
+
+  <div class="col-lg-3"></div>
+</div>
