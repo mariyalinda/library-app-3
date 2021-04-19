@@ -15,21 +15,19 @@ export class BookService {
 
   constructor(private http: HttpClient) {}
   getBook(id: any) {
-    return this.http.get('http://localhost:5000/books' + id);
+    return this.http.get('/books' + id);
   }
   getBooks() {
-    return this.http.get('http://localhost:5000/books');
+    return this.http.get('/books');
   }
 
   deleteBook(id: any) {
-    return this.http.delete('http://localhost:5000/delete/book' + id);
+    return this.http.delete('/delete/book' + id);
   }
   editBook(book: any) {
     console.log('client update');
-    return this.http
-      .put('http://localhost:5000/update/book', book)
-      .subscribe((data) => {
-        console.log(data);
-      });
+    return this.http.put('/update/book', book).subscribe((data) => {
+      console.log(data);
+    });
   }
 }

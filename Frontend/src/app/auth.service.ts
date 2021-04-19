@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  private _loginUrl = 'http://localhost:5000/login';
-  private _signupUrl = 'http://localhost:5000/signup';
+  private _loginUrl = '/login';
+  private _signupUrl = '/signup';
 
   constructor(private http: HttpClient) {}
 

@@ -17,10 +17,8 @@ export class AddbookService {
   };
   constructor(private http: HttpClient) {}
   newBook(book: any) {
-    return this.http
-      .post('http://localhost:5000/addbook', { book: book })
-      .subscribe((data) => {
-        console.log(data);
-      });
+    return this.http.post('/addbook', { book: book }).subscribe((data) => {
+      console.log(data);
+    });
   }
 }

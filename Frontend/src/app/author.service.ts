@@ -14,21 +14,19 @@ export class AuthorService {
   };
   constructor(private http: HttpClient) {}
   getAuthor(id: any) {
-    return this.http.get('http://localhost:5000/authors' + id);
+    return this.http.get('/authors' + id);
   }
   getAuthors() {
-    return this.http.get('http://localhost:5000/authors');
+    return this.http.get('/authors');
   }
 
   deleteAuthor(id: any) {
-    return this.http.delete('http://localhost:5000/delete/author' + id);
+    return this.http.delete('/delete/author' + id);
   }
   editBook(author: any) {
     console.log('client update');
-    return this.http
-      .put('http://localhost:5000/update/author', author)
-      .subscribe((data) => {
-        console.log(data);
-      });
+    return this.http.put('/update/author', author).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
